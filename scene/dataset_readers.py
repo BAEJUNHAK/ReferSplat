@@ -169,7 +169,7 @@ data_dict={
     'figurines':[83,97,146,179],
     'teatime':[2,25,43,107,129,140],
     'waldo':[19,35,67,105,162],
-    
+    'waldo_kitchen':[19,35,67,105,162],
 }
 def readColmapSceneInfo(path, images, eval, llffhold=8):
     try:
