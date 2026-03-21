@@ -58,7 +58,7 @@ def render_sets(dataset : ModelParams,model_path, pipeline : PipelineParams, ski
         gaussians = GaussianModel(dataset.sh_degree)
         scene = Scene(dataset, gaussians, shuffle=False)
         checkpoint = os.path.join(args.model_path, model_path)
-        (model_params, first_iter) = torch.load(checkpoint,map_location=f'cuda:{torch.cuda.current_device()}')
+        (model_params, first_iter) = torch.load(checkpoint, map_location=f'cuda:{torch.cuda.current_device()}', weights_only=False)
         gaussians.restore(model_params, args, mode='test')
 
         bg_color = [1,1,1] if dataset.white_background else [0, 0, 0]
